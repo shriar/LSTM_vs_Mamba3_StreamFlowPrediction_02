@@ -29,7 +29,7 @@ The split is fixed in `data/split.json` with SHA-256:
 9efbe60e790965f203b037d7e630828f7fe36285d4c86ee5c3ddbd93ec13cc58
 ```
 
-Do not regenerate the split. Run:
+Do not change the split definition. Running `--split` reproduces the same file. Run:
 
 ```bash
 python src/data_utils.py --build
