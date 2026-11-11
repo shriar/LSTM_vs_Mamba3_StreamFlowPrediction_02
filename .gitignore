@@ -57,3 +57,7 @@ Thumbs.db
 *.log
 *.out
 *.synctex.gz
+
+# Local scratch files not part of the paper
+recipes/mamba3_h200_l7_test.json
+src/side_eval_val.py

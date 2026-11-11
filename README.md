@@ -29,14 +29,14 @@ The split is fixed in `data/split.json` with SHA-256:
 9efbe60e790965f203b037d7e630828f7fe36285d4c86ee5c3ddbd93ec13cc58
 ```
 
-Do not regenerate the split. Place the downloaded archive in `data/raw/` and run:
+Do not regenerate the split. Run:
 
 ```bash
 python src/data_utils.py --build
 python src/data_utils.py --split
 ```
 
-The build writes the arrays to `data/preprocessed/` and the pickles to `data/pickles/`. Both are ignored by git.
+`--build` downloads the CAMELS v1.2 archive and attribute tables, checks their SHA-256, extracts them, and writes the arrays. `--split` writes the pickles and the split specification. Allow about 20 GB of free disk space. The arrays and pickles are ignored by git.
 
 ## Environment
 
