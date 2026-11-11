@@ -21,7 +21,7 @@ This repository contains the training, evaluation, tuning and analysis code. It 
 
 ## Data
 
-Download CAMELS v1.2 (RAL v2.0) from the NCAR archive (Zenodo record 15529996) and use the Daymet forcing. The record spans 1980-10-01 to 2014-09-30.
+Download CAMELS v1.2 (RAL v2.0) from the NCAR archive and use the Daymet forcing. The record spans 1980-10-01 to 2014-09-30.
 
 The split is fixed in `data/split.json` with SHA-256:
 
