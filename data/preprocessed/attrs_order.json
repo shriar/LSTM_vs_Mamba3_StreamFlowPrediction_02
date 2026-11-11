@@ -1,0 +1,93 @@
+{
+  "forcing": [
+    "dayl",
+    "prcp",
+    "srad",
+    "tmean",
+    "vp"
+  ],
+  "forcing_units": {
+    "dayl": "s",
+    "prcp": "mm/day",
+    "srad": "W/m2",
+    "tmean": "degC",
+    "vp": "Pa"
+  },
+  "attributes": [
+    "p_mean",
+    "pet_mean",
+    "p_seasonality",
+    "frac_snow",
+    "aridity",
+    "high_prec_freq",
+    "high_prec_dur",
+    "low_prec_freq",
+    "low_prec_dur",
+    "elev_mean",
+    "slope_mean",
+    "area_gages2",
+    "frac_forest",
+    "lai_max",
+    "lai_diff",
+    "gvf_max",
+    "gvf_diff",
+    "dom_land_cover_frac",
+    "dom_land_cover",
+    "root_depth_50",
+    "soil_depth_pelletier",
+    "soil_depth_statsgo",
+    "soil_porosity",
+    "soil_conductivity",
+    "max_water_content",
+    "sand_frac",
+    "silt_frac",
+    "clay_frac",
+    "geol_1st_class",
+    "glim_1st_class_frac",
+    "geol_2nd_class",
+    "glim_2nd_class_frac",
+    "carbonate_rocks_frac",
+    "geol_porosity",
+    "geol_permeability"
+  ],
+  "attribute_aliases": {
+    "geol_porosity": "geol_porostiy"
+  },
+  "attribute_units_note": "CAMELS v2.0 attribute table units; area_gages2 km2, p_mean mm/day",
+  "categorical_encoding": {
+    "method": "pd.factorize(sort=True); missing -> -1",
+    "columns": [
+      "dom_land_cover",
+      "geol_1st_class",
+      "geol_2nd_class"
+    ],
+    "first_values": {
+      "dom_land_cover": [
+        "    Barren or Sparsely Vegetated",
+        "    Closed Shrublands",
+        "    Croplands",
+        "    Deciduous Broadleaf Forest",
+        "    Evergreen Broadleaf Forest"
+      ],
+      "geol_1st_class": [
+        "Acid plutonic rocks",
+        "Acid volcanic rocks",
+        "Basic plutonic rocks",
+        "Basic volcanic rocks",
+        "Carbonate sedimentary rocks"
+      ],
+      "geol_2nd_class": [
+        "Acid plutonic rocks",
+        "Acid volcanic rocks",
+        "Basic plutonic rocks",
+        "Basic volcanic rocks",
+        "Carbonate sedimentary rocks"
+      ]
+    }
+  },
+  "target": {
+    "name": "usgsFlow",
+    "units": "cfs",
+    "note": "converted to m3/s in evaluation.py, never here"
+  }
+}

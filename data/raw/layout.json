@@ -1,0 +1,100 @@
+{
+  "zip": {
+    "name": "basin_timeseries_v1p2_metForcing_obsFlow.zip",
+    "bytes": 3406626583,
+    "md5": "8e9a466710e8270b58f01d332a87184f"
+  },
+  "n_members": 17728,
+  "top_level": [
+    "basin_dataset_public",
+    "basin_dataset_public_v1p2"
+  ],
+  "sections": {
+    "forcing": {
+      "count": 677,
+      "template": "basin_dataset_public_v1p2/basin_mean_forcing/daymet/{huc:02d}/{gauge_id}_lump_cida_forcing_leap.txt",
+      "hucs": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18"
+      ]
+    },
+    "streamflow": {
+      "count": 674,
+      "template": "basin_dataset_public_v1p2/usgs_streamflow/{huc:02d}/{gauge_id}_streamflow_qc.txt",
+      "hucs": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18"
+      ]
+    },
+    "metadata": {
+      "count": 6,
+      "members": [
+        "basin_dataset_public_v1p2/basin_metadata/",
+        "basin_dataset_public_v1p2/basin_metadata/basin_annual_hydrometeorology_characteristics_maurer.txt",
+        "basin_dataset_public_v1p2/basin_metadata/basin_annual_hydrometeorology_characteristics_daymet.txt",
+        "basin_dataset_public_v1p2/basin_metadata/basin_physical_characteristics.txt",
+        "basin_dataset_public_v1p2/basin_metadata/gauge_information.txt",
+        "basin_dataset_public_v1p2/basin_metadata/basin_annual_hydrometeorology_characteristics_nldas.txt"
+      ]
+    }
+  },
+  "coverage": {
+    "expected": 671,
+    "forcing": 677,
+    "streamflow": 674,
+    "missing_forcing": [],
+    "missing_streamflow": [],
+    "extra_forcing": [
+      "01150900",
+      "02081113",
+      "03448942",
+      "06775500",
+      "06846500",
+      "09535100"
+    ]
+  },
+  "sample_members": [
+    "basin_dataset_public_v1p2/basin_metadata/",
+    "basin_dataset_public_v1p2/basin_metadata/basin_annual_hydrometeorology_characteristics_maurer.txt",
+    "basin_dataset_public_v1p2/basin_metadata/basin_annual_hydrometeorology_characteristics_daymet.txt",
+    "basin_dataset_public_v1p2/basin_metadata/basin_physical_characteristics.txt",
+    "basin_dataset_public_v1p2/basin_metadata/gauge_information.txt",
+    "basin_dataset_public_v1p2/basin_mean_forcing/maurer/18/11451100_lump_maurer_forcing_leap.txt",
+    "basin_dataset_public_v1p2/basin_mean_forcing/maurer/18/11180500_lump_maurer_forcing_leap.txt",
+    "basin_dataset_public_v1p2/basin_mean_forcing/maurer/18/11253310_lump_maurer_forcing_leap.txt",
+    "basin_dataset_public_v1p2/basin_mean_forcing/maurer/18/11124500_lump_maurer_forcing_leap.txt",
+    "basin_dataset_public_v1p2/basin_mean_forcing/maurer/18/11528700_lump_maurer_forcing_leap.txt"
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "schema": "hpo_grid/v1",
+  "basins": 150,
+  "seed": 1,
+  "selection": "max val_median_nse; patience 10; min_delta 0",
+  "id": "matched",
+  "name": "Matched 13-trial HPO, one design per architecture",
+  "source": "EXECUTION_PLAN.md B8/C5 (R2#3, R5#2)",
+  "notes": "trial_0 is the submitted paper's recipe verbatim, so C5 can answer 'did tuning help, or were the imported defaults already near the optimum?' instead of only naming a best LR. The 12 remaining trials are latin-hypercube draws over identical ranges for both architectures (lr, min_lr/lr, weight_decay, clip, beta2, dropout), generated once with numpy default_rng(20261028) and frozen here. 150-basin stratified subset, 30 epochs, scored on validation only. No test metric may appear in this file.",
+  "axes": {
+    "lr": {
+      "scale": "log",
+      "low": 0.0005,
+      "high": 0.005
+    },
+    "min_lr_ratio": {
+      "scale": "linear",
+      "low": 0.05,
+      "high": 0.3
+    },
+    "weight_decay": {
+      "scale": "log",
+      "low": 1e-06,
+      "high": 0.01
+    },
+    "grad_clip": {
+      "scale": "linear",
+      "low": 0.5,
+      "high": 1.0
+    },
+    "beta2": {
+      "scale": "linear",
+      "low": 0.95,
+      "high": 0.999
+    },
+    "dropout": {
+      "scale": "linear",
+      "low": 0.0,
+      "high": 0.3
+    }
+  },
+  "architectures": {
+    "lstm": {
+      "tier": 1,
+      "depth": 1,
+      "epochs": 30,
+      "baseline": {
+        "lr": 0.002,
+        "lstm_min_lr": 0.0001,
+        "lstm_weight_decay": 1e-05,
+        "lstm_grad_clip": 1.0,
+        "lstm_beta2": 0.999,
+        "lstm_dropout": 0.2
+      },
+      "trials": [
+        {
+          "id": "trial_0",
+          "origin": "submitted recipe (verbatim defaults of the rejected paper)",
+          "params": {
+            "lr": 0.002,
+            "lstm_min_lr": 0.0001,
+            "lstm_weight_decay": 1e-05,
+            "lstm_grad_clip": 1.0,
+            "lstm_beta2": 0.999,
+            "lstm_dropout": 0.2
+          }
+        },
+        {
+          "id": "trial_1",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.0018,
+            "lstm_min_lr": 0.000502,
+            "lstm_weight_decay": 0.000239,
+            "lstm_grad_clip": 0.95,
+            "lstm_beta2": 0.968,
+            "lstm_dropout": 0.15
+          }
+        },
+        {
+          "id": "trial_2",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.00483,
+            "lstm_min_lr": 0.000704,
+            "lstm_weight_decay": 0.000106,
+            "lstm_grad_clip": 0.81,
+            "lstm_beta2": 0.972,
+            "lstm_dropout": 0.06
+          }
+        },
+        {
+          "id": "trial_3",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.00132,
+            "lstm_min_lr": 0.000303,
+            "lstm_weight_decay": 6.48e-05,
+            "lstm_grad_clip": 0.84,
+            "lstm_beta2": 0.96,
+            "lstm_dropout": 0.27
+          }
+        },
+        {
+          "id": "trial_4",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.000502,
+            "lstm_min_lr": 8.6e-05,
+            "lstm_weight_decay": 0.000677,
+            "lstm_grad_clip": 0.89,
+            "lstm_beta2": 0.966,
+            "lstm_dropout": 0.19
+          }
+        },
+        {
+          "id": "trial_5",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.0024,
+            "lstm_min_lr": 0.000423,
+            "lstm_weight_decay": 0.004,
+            "lstm_grad_clip": 0.53,
+            "lstm_beta2": 0.986,
+            "lstm_dropout": 0.1
+          }
+        },
+        {
+          "id": "trial_6",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.00292,
+            "lstm_min_lr": 0.000698,
+            "lstm_weight_decay": 3.6e-06,
+            "lstm_grad_clip": 0.59,
+            "lstm_beta2": 0.951,
+            "lstm_dropout": 0.23
+          }
+        },
+        {
+          "id": "trial_7",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.0012,
+            "lstm_min_lr": 8.21e-05,
+            "lstm_weight_decay": 1.23e-05,
+            "lstm_grad_clip": 0.64,
+            "lstm_beta2": 0.989,
+            "lstm_dropout": 0.1
+          }
+        },
+        {
+          "id": "trial_8",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.00216,
+            "lstm_min_lr": 0.000617,
+            "lstm_weight_decay": 3.64e-05,
+            "lstm_grad_clip": 0.79,
+            "lstm_beta2": 0.956,
+            "lstm_dropout": 0.0
+          }
+        },
+        {
+          "id": "trial_9",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.000893,
+            "lstm_min_lr": 7.74e-05,
+            "lstm_weight_decay": 0.00955,
+            "lstm_grad_clip": 0.73,
+            "lstm_beta2": 0.977,
+            "lstm_dropout": 0.14
+          }
+        },
+        {
+          "id": "trial_10",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.000626,
+            "lstm_min_lr": 0.000123,
+            "lstm_weight_decay": 0.00166,
+            "lstm_grad_clip": 0.98,
+            "lstm_beta2": 0.998,
+            "lstm_dropout": 0.03
+          }
+        },
+        {
+          "id": "trial_11",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.00379,
+            "lstm_min_lr": 0.000378,
+            "lstm_weight_decay": 7.33e-06,
+            "lstm_grad_clip": 0.57,
+            "lstm_beta2": 0.993,
+            "lstm_dropout": 0.21
+          }
+        },
+        {
+          "id": "trial_12",
+          "origin": "latin hypercube draw",
+          "params": {
+            "lr": 0.000832,
+            "lstm_min_lr": 9.87e-05,
+            "lstm_weight_decay": 1.18e-06,
+            "lstm_grad_clip": 0.69,
+            "lstm_beta2": 0.982,
+            "lstm_dropout": 0.29
+          }
+        }
+      ]
+    },
+    "mamba3": {
+      "tier": 1,
+      "depth": 3,
+      "epochs": 30,
+      "baseline": {
+        "mamba_lr": 0.003,
+        "mamba_min_lr": 0.0003,
+        "mamba_weight_decay": 0.001,
+        "mamba_grad_clip": 0.5,
+        "mamba_beta2": 0.95,
+        "mamba_dropout": 0.11
+      },
+      "trials": [
+        {
+          "id": "trial_0",
+          "origin": "submitted recipe (verbatim defaults of the rejected paper)",
+          "params": {
+            "mamba_lr": 0.003,
+            "mamba_min_lr": 0.0003,
+            "mamba_weight_decay": 0.001,
+            "mamba_grad_clip": 0.5,
+            "mamba_beta2": 0.95,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "trial_1",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.0018,
+            "mamba_min_lr": 0.000502,
+            "mamba_weight_decay": 0.000239,
+            "mamba_grad_clip": 0.95,
+            "mamba_beta2": 0.968,
+            "mamba_dropout": 0.15
+          }
+        },
+        {
+          "id": "trial_2",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.00483,
+            "mamba_min_lr": 0.000704,
+            "mamba_weight_decay": 0.000106,
+            "mamba_grad_clip": 0.81,
+            "mamba_beta2": 0.972,
+            "mamba_dropout": 0.06
+          }
+        },
+        {
+          "id": "trial_3",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.00132,
+            "mamba_min_lr": 0.000303,
+            "mamba_weight_decay": 6.48e-05,
+            "mamba_grad_clip": 0.84,
+            "mamba_beta2": 0.96,
+            "mamba_dropout": 0.27
+          }
+        },
+        {
+          "id": "trial_4",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.000502,
+            "mamba_min_lr": 8.6e-05,
+            "mamba_weight_decay": 0.000677,
+            "mamba_grad_clip": 0.89,
+            "mamba_beta2": 0.966,
+            "mamba_dropout": 0.19
+          }
+        },
+        {
+          "id": "trial_5",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.0024,
+            "mamba_min_lr": 0.000423,
+            "mamba_weight_decay": 0.004,
+            "mamba_grad_clip": 0.53,
+            "mamba_beta2": 0.986,
+            "mamba_dropout": 0.1
+          }
+        },
+        {
+          "id": "trial_6",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.00292,
+            "mamba_min_lr": 0.000698,
+            "mamba_weight_decay": 3.6e-06,
+            "mamba_grad_clip": 0.59,
+            "mamba_beta2": 0.951,
+            "mamba_dropout": 0.23
+          }
+        },
+        {
+          "id": "trial_7",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.0012,
+            "mamba_min_lr": 8.21e-05,
+            "mamba_weight_decay": 1.23e-05,
+            "mamba_grad_clip": 0.64,
+            "mamba_beta2": 0.989,
+            "mamba_dropout": 0.1
+          }
+        },
+        {
+          "id": "trial_8",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.00216,
+            "mamba_min_lr": 0.000617,
+            "mamba_weight_decay": 3.64e-05,
+            "mamba_grad_clip": 0.79,
+            "mamba_beta2": 0.956,
+            "mamba_dropout": 0.0
+          }
+        },
+        {
+          "id": "trial_9",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.000893,
+            "mamba_min_lr": 7.74e-05,
+            "mamba_weight_decay": 0.00955,
+            "mamba_grad_clip": 0.73,
+            "mamba_beta2": 0.977,
+            "mamba_dropout": 0.14
+          }
+        },
+        {
+          "id": "trial_10",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.000626,
+            "mamba_min_lr": 0.000123,
+            "mamba_weight_decay": 0.00166,
+            "mamba_grad_clip": 0.98,
+            "mamba_beta2": 0.998,
+            "mamba_dropout": 0.03
+          }
+        },
+        {
+          "id": "trial_11",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.00379,
+            "mamba_min_lr": 0.000378,
+            "mamba_weight_decay": 7.33e-06,
+            "mamba_grad_clip": 0.57,
+            "mamba_beta2": 0.993,
+            "mamba_dropout": 0.21
+          }
+        },
+        {
+          "id": "trial_12",
+          "origin": "latin hypercube draw",
+          "params": {
+            "mamba_lr": 0.000832,
+            "mamba_min_lr": 9.87e-05,
+            "mamba_weight_decay": 1.18e-06,
+            "mamba_grad_clip": 0.69,
+            "mamba_beta2": 0.982,
+            "mamba_dropout": 0.29
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "dataset": {
+    "title": "CAMELS: Catchment Attributes and MEteorology for Large-sample Studies",
+    "version": "1.2",
+    "zenodo_record": 15529996,
+    "doi": "10.5281/zenodo.15529996",
+    "landing_page": "https://ral.ucar.edu/dataset/camels-catchment-attributes-and-meteorology-large-sample-studies-dataset-downloads",
+    "checksum_policy": "MD5 is the checksum Zenodo publishes and is verified on every build; SHA256 is computed locally for provenance."
+  },
+  "retrieved_utc": "2026-10-28T05:58:39Z",
+  "files": [
+    {
+      "key": "basin_timeseries_v1p2_metForcing_obsFlow.zip",
+      "url": "https://zenodo.org/records/15529996/files/basin_timeseries_v1p2_metForcing_obsFlow.zip",
+      "local_path": "data/raw/basin_timeseries_v1p2_metForcing_obsFlow.zip",
+      "bytes": 3406626583,
+      "bytes_expected": 3406626583,
+      "md5": "8e9a466710e8270b58f01d332a87184f",
+      "sha256": "bb90fca29a5bab8f0b300787a5ab5a669a366f40ba95b6877b631a81133f7e5d",
+      "retrieved_utc": "2026-10-28T05:56:31Z",
+      "state": "cached"
+    },
+    {
+      "key": "camels_clim.txt",
+      "url": "https://zenodo.org/records/15529996/files/camels_clim.txt",
+      "local_path": "data/camels_attributes_v2.0/camels_clim.txt",
+      "bytes": 100673,
+      "bytes_expected": 100673,
+      "md5": "67f22592f3fb72c57df81358ce68458b",
+      "sha256": "6a3a80256afbaea13f59f279c174d3c010156b826ffb53a4cfb5508814404f5f",
+      "retrieved_utc": "2026-10-28T05:56:31Z",
+      "state": "cached"
+    },
+    {
+      "key": "camels_geol.txt",
+      "url": "https://zenodo.org/records/15529996/files/camels_geol.txt",
+      "local_path": "data/camels_attributes_v2.0/camels_geol.txt",
+      "bytes": 71583,
+      "bytes_expected": 71583,
+      "md5": "f5ce5de53eb1ea2532cda7e3b4813993",
+      "sha256": "2ffe3871541b93bde02f72df6c34933cb91edb45af363fd7d50c3eaa7da0b5e6",
+      "retrieved_utc": "2026-10-28T05:56:31Z",
+      "state": "cached"
+    },
+    {
+      "key": "camels_hydro.txt",
+      "url": "https://zenodo.org/records/15529996/files/camels_hydro.txt",
+      "local_path": "data/camels_attributes_v2.0/camels_hydro.txt",
+      "bytes": 122799,
+      "bytes_expected": 122799,
+      "md5": "55ebdeb36c42ee7acdb998229c3edb3a",
+      "sha256": "7dcae3ea8c28e6485fc9e39b3c5e8bb509d6354ebe9b0b98873ec47fa36e3c41",
+      "retrieved_utc": "2026-10-28T05:56:32Z",
+      "state": "cached"
+    },
+    {
+      "key": "camels_name.txt",
+      "url": "https://zenodo.org/records/15529996/files/camels_name.txt",
+      "local_path": "data/camels_attributes_v2.0/camels_name.txt",
+      "bytes": 30417,
+      "bytes_expected": 30417,
+      "md5": "c96491b32c4df55a31bead7ceca7d64b",
+      "sha256": "f3a85272cd934c6e12386db5f21979675fc891844250a335135786ad9a2de445",
+      "retrieved_utc": "2026-10-28T05:56:32Z",
+      "state": "cached"
+    },
+    {
+      "key": "camels_soil.txt",
+      "url": "https://zenodo.org/records/15529996/files/camels_soil.txt",
+      "local_path": "data/camels_attributes_v2.0/camels_soil.txt",
+      "bytes": 109125,
+      "bytes_expected": 109125,
+      "md5": "8edb46a363a20b466a4b7105ba633767",
+      "sha256": "2acabec448fda2d7d93c2182a8a148e0f6a2dfc40f6f0944ec09eda6eeea0a6d",
+      "retrieved_utc": "2026-10-28T05:56:32Z",
+      "state": "cached"
+    },
+    {
+      "key": "camels_topo.txt",
+      "url": "https://zenodo.org/records/15529996/files/camels_topo.txt",
+      "local_path": "data/camels_attributes_v2.0/camels_topo.txt",
+      "bytes": 38677,
+      "bytes_expected": 38677,
+      "md5": "0f6267838c40b1507b64582433bc0b8e",
+      "sha256": "b64ca9923bcaccf21dde33137903797919e8d6732edd7849f8534e0ddcbec8e8",
+      "retrieved_utc": "2026-10-28T05:56:32Z",
+      "state": "cached"
+    },
+    {
+      "key": "camels_vege.txt",
+      "url": "https://zenodo.org/records/15529996/files/camels_vege.txt",
+      "local_path": "data/camels_attributes_v2.0/camels_vege.txt",
+      "bytes": 107970,
+      "bytes_expected": 107970,
+      "md5": "f40e843defc1e654a800be9fe5fd5090",
+      "sha256": "ea97f5d91a2f5acccef21df08417729aade51afe9a2651ab30c2990e7ad63d74",
+      "retrieved_utc": "2026-10-28T05:56:32Z",
+      "state": "cached"
+    }
+  ],
+  "skipped": {
+    "reason": "not model inputs; re-downloadable from the same record",
+    "keys": [
+      "basin_timeseries_v1p2_modelOutput_daymet.zip",
+      "basin_timeseries_v1p2_modelOutput_maurer.zip",
+      "basin_timeseries_v1p2_modelOutput_nldas.zip",
+      "basin_set_full_res.zip",
+      "pet_harg.zip"
+    ]
+  },
+  "extraction": {
+    "local_path": "data/raw/basin_timeseries_v1p2_metForcing_obsFlow",
+    "members": 17728,
+    "bytes": 14895503688,
+    "layout": "data/raw/layout.json",
+    "coverage": {
+      "expected": 671,
+      "forcing": 677,
+      "streamflow": 674,
+      "missing_forcing": [],
+      "missing_streamflow": [],
+      "extra_forcing": [
+        "01150900",
+        "02081113",
+        "03448942",
+        "06775500",
+        "06846500",
+        "09535100"
+      ]
+    }
+  },
+  "build": {
+    "arrays": {
+      "x": {
+        "shape": [
+          671,
+          12418,
+          5
+        ],
+        "dtype": "float64",
+        "columns": [
+          "dayl",
+          "prcp",
+          "srad",
+          "tmean",
+          "vp"
+        ]
+      },
+      "y": {
+        "shape": [
+          671,
+          12418,
+          1
+        ],
+        "dtype": "float64",
+        "columns": [
+          "usgsFlow_cfs"
+        ]
+      },
+      "c": {
+        "shape": [
+          671,
+          35
+        ],
+        "dtype": "float64",
+        "columns": [
+          "p_mean",
+          "pet_mean",
+          "p_seasonality",
+          "frac_snow",
+          "aridity",
+          "high_prec_freq",
+          "high_prec_dur",
+          "low_prec_freq",
+          "low_prec_dur",
+          "elev_mean",
+          "slope_mean",
+          "area_gages2",
+          "frac_forest",
+          "lai_max",
+          "lai_diff",
+          "gvf_max",
+          "gvf_diff",
+          "dom_land_cover_frac",
+          "dom_land_cover",
+          "root_depth_50",
+          "soil_depth_pelletier",
+          "soil_depth_statsgo",
+          "soil_porosity",
+          "soil_conductivity",
+          "max_water_content",
+          "sand_frac",
+          "silt_frac",
+          "clay_frac",
+          "geol_1st_class",
+          "glim_1st_class_frac",
+          "geol_2nd_class",
+          "glim_2nd_class_frac",
+          "carbonate_rocks_frac",
+          "geol_porosity",
+          "geol_permeability"
+        ]
+      }
+    },
+    "time": {
+      "start": "1980-10-01",
+      "end": "2014-09-30",
+      "n_days": 12418,
+      "calendar": "proleptic_gregorian"
+    },
+    "basins": {
+      "n": 671,
+      "gauge_ids_sha256": "e8f8dc47a13a7a0d03a497f022af6256ebeb7fe09631624da0d8c9fb333ae9b6",
+      "order": "data/gauge_ids.csv"
+    },
+    "checks": {
+      "basins": 671,
+      "days": 12418,
+      "forcing_channels": 5,
+      "attributes": 35,
+      "basin_order_matches_gauge_ids": true,
+      "x_nan": 0,
+      "y_nan": 180989,
+      "c_nan": 27,
+      "forcing_sentinel_hits_converted_to_nan": 0,
+      "all_nan_forcing_basins": [],
+      "all_nan_flow_basins": []
+    },
+    "split": {
+      "train": {
+        "start": "1980-10-01",
+        "end": "1995-09-30"
+      },
+      "val": {
+        "start": "1995-10-01",
+        "end": "1999-09-30"
+      },
+      "test": {
+        "start": "1999-10-01",
+        "end": "2014-09-30"
+      }
+    },
+    "context_days": 730,
+    "preprocessed": {
+      "x": "data/preprocessed/x.npy",
+      "y": "data/preprocessed/y.npy",
+      "c": "data/preprocessed/c.npy",
+      "scaler": "data/preprocessed/scaler.json",
+      "attrs_order": "data/preprocessed/attrs_order.json",
+      "meta": "data/preprocessed/meta.json"
+    },
+    "built_utc": "2026-10-28T05:58:38Z"
+  }
+}

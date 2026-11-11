@@ -1,0 +1,3417 @@
+{
+  "protocol": {
+    "scheme": "15 / 4 / 15 water years",
+    "dates_are_inclusive": true,
+    "pickle_format": "pickle tuple (x, y, c), float64, protocol 4",
+    "warm_up": "context inputs prepended at load time, never stored"
+  },
+  "dataset": {
+    "title": "CAMELS: Catchment Attributes and MEteorology for Large-sample Studies",
+    "version": "1.2",
+    "zenodo_record": 15529996,
+    "doi": "10.5281/zenodo.15529996",
+    "time": {
+      "start": "1980-10-01",
+      "end": "2014-09-30",
+      "n_days": 12418,
+      "calendar": "proleptic_gregorian"
+    }
+  },
+  "preprocessed": {
+    "arrays": {
+      "x": [
+        671,
+        12418,
+        5
+      ],
+      "y": [
+        671,
+        12418,
+        1
+      ],
+      "c": [
+        671,
+        35
+      ]
+    },
+    "zip_md5": "8e9a466710e8270b58f01d332a87184f",
+    "gauge_ids_sha256": "e8f8dc47a13a7a0d03a497f022af6256ebeb7fe09631624da0d8c9fb333ae9b6"
+  },
+  "arrays": {
+    "x": {
+      "shape": [
+        671,
+        12418,
+        5
+      ],
+      "dtype": "float64",
+      "columns": [
+        "dayl",
+        "prcp",
+        "srad",
+        "tmean",
+        "vp"
+      ]
+    },
+    "y": {
+      "shape": [
+        671,
+        12418,
+        1
+      ],
+      "dtype": "float64",
+      "columns": [
+        "usgsFlow_cfs"
+      ]
+    },
+    "c": {
+      "shape": [
+        671,
+        35
+      ],
+      "dtype": "float64",
+      "columns": [
+        "p_mean",
+        "pet_mean",
+        "p_seasonality",
+        "frac_snow",
+        "aridity",
+        "high_prec_freq",
+        "high_prec_dur",
+        "low_prec_freq",
+        "low_prec_dur",
+        "elev_mean",
+        "slope_mean",
+        "area_gages2",
+        "frac_forest",
+        "lai_max",
+        "lai_diff",
+        "gvf_max",
+        "gvf_diff",
+        "dom_land_cover_frac",
+        "dom_land_cover",
+        "root_depth_50",
+        "soil_depth_pelletier",
+        "soil_depth_statsgo",
+        "soil_porosity",
+        "soil_conductivity",
+        "max_water_content",
+        "sand_frac",
+        "silt_frac",
+        "clay_frac",
+        "geol_1st_class",
+        "glim_1st_class_frac",
+        "geol_2nd_class",
+        "glim_2nd_class_frac",
+        "carbonate_rocks_frac",
+        "geol_porosity",
+        "geol_permeability"
+      ]
+    }
+  },
+  "slices": {
+    "train": {
+      "sha256": "7bf07eb42aa04ddfa2cb293aef8e4f51560779fe495ab663331193e5b137c814",
+      "start": "1980-10-01",
+      "end": "1995-09-30",
+      "start_index": 0,
+      "stop_index": 5478,
+      "days": 5478,
+      "y_nan": 141544,
+      "pickle": "data/pickles/train.pkl",
+      "bytes": 176623565
+    },
+    "val": {
+      "sha256": "7b9a5f6652eb7819770dc2fc49b3a05ad1e4c7f2cf34f8966034e132c1e3505d",
+      "start": "1995-10-01",
+      "end": "1999-09-30",
+      "start_index": 5478,
+      "stop_index": 6939,
+      "days": 1461,
+      "y_nan": 1,
+      "pickle": "data/pickles/val.pkl",
+      "bytes": 47244029
+    },
+    "test": {
+      "sha256": "783eae87ceed212249c72215c77776a7a57fce25f33434dbce4af290223e0c63",
+      "start": "1999-10-01",
+      "end": "2014-09-30",
+      "start_index": 6939,
+      "stop_index": 12418,
+      "days": 5479,
+      "y_nan": 39444,
+      "pickle": "data/pickles/test.pkl",
+      "bytes": 176655773
+    }
+  },
+  "context": {
+    "days": 730,
+    "rule": "each scored slice borrows `days` of context *inputs* from the tail of the previous slice; targets are never borrowed",
+    "windows": {
+      "train": null,
+      "val": {
+        "source_slice": "train",
+        "start_index": 4748,
+        "stop_index": 5478,
+        "days": 730,
+        "start": "1993-10-01",
+        "end": "1995-09-30"
+      },
+      "test": {
+        "source_slice": "val",
+        "start_index": 6209,
+        "stop_index": 6939,
+        "days": 730,
+        "start": "1997-10-01",
+        "end": "1999-09-30"
+      }
+    }
+  },
+  "basins": {
+    "n": 671,
+    "gauge_ids_sha256": "e8f8dc47a13a7a0d03a497f022af6256ebeb7fe09631624da0d8c9fb333ae9b6",
+    "order": "data/gauge_ids.csv"
+  },
+  "split_sha256": "9efbe60e790965f203b037d7e630828f7fe36285d4c86ee5c3ddbd93ec13cc58",
+  "equivalence": {
+    "checked_utc": "2026-10-28T07:13:22Z",
+    "tolerance": 1e-09,
+    "split_integrity": "ok",
+    "legacy_window": {
+      "train": "1980-10-01 → 1995-09-30",
+      "val": "1995-10-01 → 2010-09-30"
+    },
+    "legacy_files": [
+      {
+        "path": "data/legacy/training_file",
+        "sha256": "ba8830bbb750a8fcc47f79be0d065d868f66e6f00d80c1b2945643cd006d0a41",
+        "bytes": 176623564
+      },
+      {
+        "path": "data/legacy/validation_file",
+        "sha256": "c9b5bf1953bda7463730fed7c11355a8aa776a82d80605d033bbc64998a032ad",
+        "bytes": 176655772
+      }
+    ],
+    "raw": {
+      "train": {
+        "window": "1980-10-01 → 1995-09-30",
+        "days": 5478,
+        "x": {
+          "dayl": {
+            "max_abs_diff": 0.0,
+            "nan_mismatch": 0,
+            "ok": true
+          },
+          "prcp": {
+            "max_abs_diff": 0.0,
+            "nan_mismatch": 0,
+            "ok": true
+          },
+          "srad": {
+            "max_abs_diff": 0.0,
+            "nan_mismatch": 0,
+            "ok": true
+          },
+          "tmean": {
+            "max_abs_diff": 0.0,
+            "nan_mismatch": 0,
+            "ok": true
+          },
+          "vp": {
+            "max_abs_diff": 0.0,
+            "nan_mismatch": 0,
+            "ok": true
+          }
+        },
+        "y": {
+          "max_abs_diff": 0.0,
+          "nan_mismatch": 0,
+          "ok": true
+        }
+      },
+      "val": {
+        "window": "1995-10-01 → 2010-09-30",
+        "days": 5479,
+        "x": {
+          "dayl": {
+            "max_abs_diff": 0.0,
+            "nan_mismatch": 0,
+            "ok": true
+          },
+          "prcp": {
+            "max_abs_diff": 0.0,
+            "nan_mismatch": 0,
+            "ok": true
+          },
+          "srad": {
+            "max_abs_diff": 0.0,
+            "nan_mismatch": 0,
+            "ok": true
+          },
+          "tmean": {
+            "max_abs_diff": 0.0,
+            "nan_mismatch": 0,
+            "ok": true
+          },
+          "vp": {
+            "max_abs_diff": 0.0,
+            "nan_mismatch": 0,
+            "ok": true
+          }
+        },
+        "y": {
+          "max_abs_diff": 0.0,
+          "nan_mismatch": 0,
+          "ok": true
+        }
+      },
+      "c": {
+        "max_abs_diff": 9.020562075079397e-17,
+        "nan_mismatch": 0,
+        "ok": true,
+        "bit_identical": false,
+        "published_tokens": {
+          "columns": [
+            "p_mean",
+            "pet_mean",
+            "p_seasonality",
+            "frac_snow",
+            "aridity",
+            "high_prec_freq",
+            "high_prec_dur",
+            "low_prec_freq",
+            "low_prec_dur",
+            "elev_mean",
+            "slope_mean",
+            "area_gages2",
+            "frac_forest",
+            "lai_max",
+            "lai_diff",
+            "gvf_max",
+            "gvf_diff",
+            "dom_land_cover_frac",
+            "root_depth_50",
+            "soil_depth_pelletier",
+            "soil_depth_statsgo",
+            "soil_porosity",
+            "soil_conductivity",
+            "max_water_content",
+            "sand_frac",
+            "silt_frac",
+            "clay_frac",
+            "glim_1st_class_frac",
+            "glim_2nd_class_frac",
+            "carbonate_rocks_frac",
+            "geol_porosity",
+            "geol_permeability"
+          ],
+          "cells": 21472,
+          "new_mismatches": 0,
+          "legacy_mismatches": 156,
+          "legacy_cells_differing_from_new": 156,
+          "categorical_codes_identical": true
+        }
+      }
+    },
+    "raw_ok": true,
+    "scaled": {
+      "status": "compared",
+      "statistics": {
+        "dayl": {
+          "legacy": [
+            33868.8,
+            52531.21,
+            43193.04163886545,
+            7148.769111209937
+          ],
+          "new": [
+            33868.8,
+            52531.21,
+            43193.04163886545,
+            7148.769111209937
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "prcp": {
+          "legacy": [
+            0.0,
+            11.0,
+            3.202203124923485,
+            7.581980521547263
+          ],
+          "new": [
+            0.0,
+            11.0,
+            3.202203124923485,
+            7.581980521547263
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "srad": {
+          "legacy": [
+            164.25,
+            506.02,
+            342.71297434964083,
+            132.81027394717358
+          ],
+          "new": [
+            164.25,
+            506.02,
+            342.71297434964083,
+            132.81027394717358
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "tmean": {
+          "legacy": [
+            -3.6750000000000003,
+            23.87,
+            10.222146296879702,
+            10.520438079586558
+          ],
+          "new": [
+            -3.6750000000000003,
+            23.87,
+            10.222146296879702,
+            10.520438079586558
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "vp": {
+          "legacy": [
+            280.0,
+            1977.14,
+            940.8223818536577,
+            650.8755780244827
+          ],
+          "new": [
+            280.0,
+            1977.14,
+            940.8223818536577,
+            650.8755780244827
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "runoff": {
+          "legacy": [
+            0.006767649128989805,
+            0.8980731427015175,
+            0.3842774999836178,
+            0.8379614938277342
+          ],
+          "new": [
+            0.006767649128989805,
+            0.8980731427015175,
+            0.3842774999836178,
+            0.8379614938277342
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "p_mean": {
+          "legacy": [
+            1.55055167693361,
+            4.64999041752225,
+            3.257722061222179,
+            1.4093900773162575
+          ],
+          "new": [
+            1.55055167693361,
+            4.64999041752225,
+            3.257722061222179,
+            1.4093900773162575
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "pet_mean": {
+          "legacy": [
+            2.1470467761807,
+            3.55741331964408,
+            2.7873652197155474,
+            0.5545586452738964
+          ],
+          "new": [
+            2.1470467761807,
+            3.55741331964408,
+            2.7873652197155474,
+            0.5545586452738964
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "p_seasonality": {
+          "legacy": [
+            -0.836194748180532,
+            0.621476145395479,
+            -0.04127946765143021,
+            0.5270366120903908
+          ],
+          "new": [
+            -0.836194748180532,
+            0.621476145395479,
+            -0.04127946765143021,
+            0.5270366120903908
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "frac_snow": {
+          "legacy": [
+            0.0030982528891208,
+            0.52956688772688,
+            0.1776040592521807,
+            0.2031358038480485
+          ],
+          "new": [
+            0.00309825288912082,
+            0.52956688772688,
+            0.17760405925218076,
+            0.2031358038480485
+          ],
+          "mean_delta": 5.551115123125783e-17,
+          "std_ratio": 1.0
+        },
+        "aridity": {
+          "legacy": [
+            0.543704960792406,
+            1.87330300304748,
+            1.0565155490835534,
+            0.6149898629889541
+          ],
+          "new": [
+            0.543704960792406,
+            1.87330300304748,
+            1.0565155490835534,
+            0.6149898629889541
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "high_prec_freq": {
+          "legacy": [
+            13.75,
+            25.85,
+            20.930998509687036,
+            4.541832424799546
+          ],
+          "new": [
+            13.75,
+            25.85,
+            20.930998509687036,
+            4.541832424799546
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "high_prec_dur": {
+          "legacy": [
+            1.16627078384798,
+            1.6517571884984,
+            1.3498370635820642,
+            0.1910832155245367
+          ],
+          "new": [
+            1.16627078384798,
+            1.6517571884984,
+            1.3498370635820642,
+            0.1910832155245367
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "low_prec_freq": {
+          "legacy": [
+            204.35,
+            300.45,
+            254.64731743666167,
+            35.089201003742616
+          ],
+          "new": [
+            204.35,
+            300.45,
+            254.64731743666167,
+            35.089201003742616
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "low_prec_dur": {
+          "legacy": [
+            3.45440956651719,
+            9.44347826086956,
+            5.953786629968722,
+            3.197050807990256
+          ],
+          "new": [
+            3.45440956651719,
+            9.44347826086956,
+            5.953786629968722,
+            3.197050807990256
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "elev_mean": {
+          "legacy": [
+            101.5,
+            2085.87,
+            759.4218777943368,
+            785.4110468749818
+          ],
+          "new": [
+            101.5,
+            2085.87,
+            759.4218777943368,
+            785.4110468749818
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "slope_mean": {
+          "legacy": [
+            4.38699,
+            116.4248,
+            46.19530734724292,
+            47.08567516434056
+          ],
+          "new": [
+            4.38699,
+            116.4248,
+            46.19530734724292,
+            47.08567516434056
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "area_gages2": {
+          "legacy": [
+            38.23,
+            1781.61,
+            792.6180625931445,
+            1700.6816807451587
+          ],
+          "new": [
+            38.23,
+            1781.61,
+            792.6180625931445,
+            1700.6816807451587
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "frac_forest": {
+          "legacy": [
+            0.0201,
+            0.9964,
+            0.6395393442622951,
+            0.37235636613312806
+          ],
+          "new": [
+            0.0201,
+            0.9964,
+            0.6395393442622951,
+            0.37235636613312806
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "lai_max": {
+          "legacy": [
+            1.16382103006498,
+            5.04213474288441,
+            3.215969887067216,
+            1.5190004763762706
+          ],
+          "new": [
+            1.16382103006498,
+            5.04213474288441,
+            3.215969887067216,
+            1.5190004763762706
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "lai_diff": {
+          "legacy": [
+            0.752624093190321,
+            4.28948183933672,
+            2.448587613941409,
+            1.3328168318494504
+          ],
+          "new": [
+            0.752624093190321,
+            4.28948183933672,
+            2.448587613941409,
+            1.3328168318494504
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "gvf_max": {
+          "legacy": [
+            0.463035338065315,
+            0.885626193492327,
+            0.7221043008882689,
+            0.16819328774329798
+          ],
+          "new": [
+            0.463035338065315,
+            0.885626193492327,
+            0.7221043008882689,
+            0.16819328774329798
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "gvf_diff": {
+          "legacy": [
+            0.128325498977479,
+            0.504552265673554,
+            0.3227487481524666,
+            0.1484538865500057
+          ],
+          "new": [
+            0.128325498977479,
+            0.504552265673554,
+            0.3227487481524666,
+            0.1484538865500057
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "dom_land_cover_frac": {
+          "legacy": [
+            0.539464124495951,
+            0.999999999999894,
+            0.8099687736977969,
+            0.1838098286713087
+          ],
+          "new": [
+            0.539464124495951,
+            0.999999999999894,
+            0.8099687736977969,
+            0.1838098286713087
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "dom_land_cover": {
+          "legacy": [
+            2.0,
+            11.0,
+            6.078986587183309,
+            2.9260161241841307
+          ],
+          "new": [
+            2.0,
+            11.0,
+            6.078986587183309,
+            2.9260161241841307
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "root_depth_50": {
+          "legacy": [
+            0.1321499917652488,
+            0.22460713150891218,
+            0.17881443061069846,
+            0.03090319048356531
+          ],
+          "new": [
+            0.1321499917652488,
+            0.22460713150891218,
+            0.17881443061069846,
+            0.03090319048356531
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "soil_depth_pelletier": {
+          "legacy": [
+            0.791666666666667,
+            41.9248366013072,
+            10.872827963069417,
+            16.227227941663568
+          ],
+          "new": [
+            0.791666666666667,
+            41.9248366013072,
+            10.872827963069417,
+            16.227227941663568
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "soil_depth_statsgo": {
+          "legacy": [
+            0.862333787940201,
+            1.50000001490116,
+            1.2931724691699245,
+            0.26987779532688716
+          ],
+          "new": [
+            0.862333787940201,
+            1.50000001490116,
+            1.2931724691699245,
+            0.26987779532688716
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "soil_porosity": {
+          "legacy": [
+            0.41658977506002,
+            0.467676694953845,
+            0.4426183213996412,
+            0.02356828843810459
+          ],
+          "new": [
+            0.41658977506002,
+            0.467676694953845,
+            0.4426183213996412,
+            0.02356828843810459
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "soil_conductivity": {
+          "legacy": [
+            0.653269266776188,
+            2.91634943889388,
+            1.7405237797425586,
+            1.5212737409484445
+          ],
+          "new": [
+            0.653269266776188,
+            2.91634943889388,
+            1.7405237797425586,
+            1.5212737409484445
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "max_water_content": {
+          "legacy": [
+            0.322782379498217,
+            0.684376076224964,
+            0.5280316787759867,
+            0.14664307119509448
+          ],
+          "new": [
+            0.322782379498217,
+            0.684376076224964,
+            0.5280316787759867,
+            0.14664307119509448
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "sand_frac": {
+          "legacy": [
+            17.202253171098,
+            56.655488319526,
+            36.468223000026654,
+            15.616220417993468
+          ],
+          "new": [
+            17.202253171098,
+            56.655488319526,
+            36.468223000026654,
+            15.616220417993468
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "silt_frac": {
+          "legacy": [
+            16.7882600008835,
+            51.305546712209,
+            33.85860457309613,
+            13.241899227329707
+          ],
+          "new": [
+            16.7882600008835,
+            51.305546712209,
+            33.85860457309613,
+            13.241899227329707
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "clay_frac": {
+          "legacy": [
+            8.16280077308793,
+            32.7614458754766,
+            19.885857854245483,
+            9.312995271476105
+          ],
+          "new": [
+            8.16280077308793,
+            32.7614458754766,
+            19.885857854245483,
+            9.312995271476105
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "geol_1st_class": {
+          "legacy": [
+            3.0,
+            11.0,
+            7.640834575260805,
+            3.3924702131339743
+          ],
+          "new": [
+            3.0,
+            11.0,
+            7.640834575260805,
+            3.3924702131339743
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "glim_1st_class_frac": {
+          "legacy": [
+            0.492424217677858,
+            1.0,
+            0.7855461965732077,
+            0.20202002064114472
+          ],
+          "new": [
+            0.492424217677858,
+            1.0,
+            0.7855461965732077,
+            0.20202002064114472
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "geol_2nd_class": {
+          "legacy": [
+            -1.0,
+            11.0,
+            5.426229508196721,
+            4.64124231157111
+          ],
+          "new": [
+            -1.0,
+            11.0,
+            5.426229508196721,
+            4.64124231157111
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "glim_2nd_class_frac": {
+          "legacy": [
+            0.0,
+            0.369166122526313,
+            0.15542607184978768,
+            0.14363069081266147
+          ],
+          "new": [
+            0.0,
+            0.369166122526313,
+            0.15542607184978768,
+            0.14363069081266144
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 0.9999999999999998
+        },
+        "carbonate_rocks_frac": {
+          "legacy": [
+            0.0,
+            0.532724007641709,
+            0.11874262265363414,
+            0.26066758492904074
+          ],
+          "new": [
+            0.0,
+            0.532724007641709,
+            0.11874262265363414,
+            0.26066758492904074
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "geol_porosity": {
+          "legacy": [
+            0.020890000000000002,
+            0.2167,
+            0.12637290419161679,
+            0.06951330915048355
+          ],
+          "new": [
+            0.020890000000000002,
+            0.2167,
+            0.12637290419161679,
+            0.06951330915048355
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        },
+        "geol_permeability": {
+          "legacy": [
+            -15.4207,
+            -12.3177,
+            -13.885704619970195,
+            1.1835051170736903
+          ],
+          "new": [
+            -15.4207,
+            -12.3177,
+            -13.885704619970195,
+            1.1835051170736903
+          ],
+          "mean_delta": 0.0,
+          "std_ratio": 1.0
+        }
+      },
+      "val_x": {
+        "max_abs_diff": 0.0,
+        "nan_mismatch": 0,
+        "ok": true
+      },
+      "val_c": {
+        "max_abs_diff": 8.881784197001252e-16,
+        "nan_mismatch": 0,
+        "ok": true
+      },
+      "max_abs_mean_delta": 5.551115123125783e-17,
+      "std_ratio_range": [
+        0.9999999999999998,
+        1.0
+      ],
+      "ok": true
+    }
+  },
+  "adjudication": {
+    "checked_utc": "2026-10-28T07:14:42Z",
+    "window": {
+      "start": "1997-01-01",
+      "end": "1997-01-30",
+      "days": 30
+    },
+    "tolerance": 1e-09,
+    "basins": [
+      "01013500",
+      "02371500",
+      "06280300",
+      "09404450",
+      "14400000"
+    ],
+    "new_agrees": 5,
+    "legacy_agrees": 5,
+    "results": [
+      {
+        "row": 0,
+        "gauge_id": "01013500",
+        "huc": "01",
+        "verdict": "hand = new = legacy",
+        "new_ok": true,
+        "legacy_ok": true,
+        "legacy_cells_off": [],
+        "categorical_codes_identical": true,
+        "comparisons": {
+          "x.dayl": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.prcp": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.srad": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.tmean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.vp": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "y": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "runoff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.p_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.pet_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.p_seasonality": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.frac_snow": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.aridity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.high_prec_freq": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.high_prec_dur": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.low_prec_freq": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.low_prec_dur": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.elev_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.slope_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.area_gages2": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.frac_forest": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.lai_max": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.lai_diff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.gvf_max": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.gvf_diff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.dom_land_cover_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.root_depth_50": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_depth_pelletier": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_depth_statsgo": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_porosity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_conductivity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.max_water_content": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.sand_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.silt_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.clay_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.glim_1st_class_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.glim_2nd_class_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.carbonate_rocks_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.geol_porosity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.geol_permeability": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          }
+        }
+      },
+      {
+        "row": 168,
+        "gauge_id": "02371500",
+        "huc": "03",
+        "verdict": "hand = new = legacy",
+        "new_ok": true,
+        "legacy_ok": true,
+        "legacy_cells_off": [],
+        "categorical_codes_identical": true,
+        "comparisons": {
+          "x.dayl": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.prcp": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.srad": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.tmean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.vp": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "y": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "runoff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.p_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.pet_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.p_seasonality": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.frac_snow": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.aridity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.high_prec_freq": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.high_prec_dur": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.low_prec_freq": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.low_prec_dur": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.elev_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.slope_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.area_gages2": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.frac_forest": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.lai_max": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.lai_diff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.gvf_max": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.gvf_diff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.dom_land_cover_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.root_depth_50": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_depth_pelletier": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_depth_statsgo": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_porosity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_conductivity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.max_water_content": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.sand_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.silt_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.clay_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.glim_1st_class_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.glim_2nd_class_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.carbonate_rocks_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.geol_porosity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.geol_permeability": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          }
+        }
+      },
+      {
+        "row": 336,
+        "gauge_id": "06280300",
+        "huc": "10",
+        "verdict": "hand = new = legacy",
+        "new_ok": true,
+        "legacy_ok": true,
+        "legacy_cells_off": [],
+        "categorical_codes_identical": true,
+        "comparisons": {
+          "x.dayl": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.prcp": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.srad": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.tmean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.vp": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "y": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "runoff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.p_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.pet_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.p_seasonality": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.frac_snow": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.aridity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.high_prec_freq": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.high_prec_dur": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.low_prec_freq": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.low_prec_dur": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.elev_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.slope_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.area_gages2": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.frac_forest": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.lai_max": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.lai_diff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.gvf_max": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.gvf_diff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.dom_land_cover_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.root_depth_50": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_depth_pelletier": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_depth_statsgo": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_porosity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_conductivity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.max_water_content": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.sand_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.silt_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.clay_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.glim_1st_class_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.glim_2nd_class_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.carbonate_rocks_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.geol_porosity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.geol_permeability": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          }
+        }
+      },
+      {
+        "row": 504,
+        "gauge_id": "09404450",
+        "huc": "15",
+        "verdict": "hand = new = legacy",
+        "new_ok": true,
+        "legacy_ok": true,
+        "legacy_cells_off": [],
+        "categorical_codes_identical": true,
+        "comparisons": {
+          "x.dayl": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.prcp": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.srad": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.tmean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.vp": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "y": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "runoff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.p_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.pet_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.p_seasonality": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.frac_snow": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.aridity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.high_prec_freq": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.high_prec_dur": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.low_prec_freq": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.low_prec_dur": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.elev_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.slope_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.area_gages2": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.frac_forest": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.lai_max": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.lai_diff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.gvf_max": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.gvf_diff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.dom_land_cover_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.root_depth_50": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_depth_pelletier": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_depth_statsgo": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_porosity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_conductivity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.max_water_content": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.sand_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.silt_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.clay_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.glim_1st_class_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.glim_2nd_class_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.carbonate_rocks_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.geol_porosity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.geol_permeability": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          }
+        }
+      },
+      {
+        "row": 670,
+        "gauge_id": "14400000",
+        "huc": "17",
+        "verdict": "hand = new = legacy",
+        "new_ok": true,
+        "legacy_ok": true,
+        "legacy_cells_off": [],
+        "categorical_codes_identical": true,
+        "comparisons": {
+          "x.dayl": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.prcp": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.srad": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.tmean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "x.vp": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "y": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "runoff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.p_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.pet_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.p_seasonality": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.frac_snow": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.aridity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.high_prec_freq": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.high_prec_dur": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.low_prec_freq": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.low_prec_dur": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.elev_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.slope_mean": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.area_gages2": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.frac_forest": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.lai_max": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.lai_diff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.gvf_max": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.gvf_diff": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.dom_land_cover_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.root_depth_50": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_depth_pelletier": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_depth_statsgo": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_porosity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.soil_conductivity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.max_water_content": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.sand_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.silt_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.clay_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.glim_1st_class_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.glim_2nd_class_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.carbonate_rocks_frac": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.geol_porosity": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          },
+          "c.geol_permeability": {
+            "hand_vs_new": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            },
+            "hand_vs_legacy": {
+              "max_abs_diff": 0.0,
+              "nan_mismatch": 0,
+              "ok": true
+            }
+          }
+        }
+      }
+    ],
+    "passed": true
+  }
+}

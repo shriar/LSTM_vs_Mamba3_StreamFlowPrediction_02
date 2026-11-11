@@ -1,0 +1,171 @@
+{
+  "schema": "hpo_grid/v1",
+  "basins": 150,
+  "seed": 1,
+  "selection": "max val_median_nse; patience 10; min_delta 0",
+  "id": "sensitivity_h96",
+  "name": "3x2x2 Mamba-3 sensitivity grid (12 cells), re-run at the matched width H96",
+  "source": "EXECUTION_PLAN.md B8/C7a/C7b (R3#4, R2#3, R5#2) + B4 follow-up (2026-11-04)",
+  "notes": "Byte-identical cells, ranges and seed to recipes/sweeps/sensitivity.json; the only change is the model width: the Mamba ladder was re-derived for the mandatory `standard` wiring, so Tier 1 depth 3 is H96 (219,685 params) instead of H80 (159,375). The reviewers asked for instability evidence at the width the headline uses, so the grid is re-run rather than inherited. Separate grid id so results/hpo/sensitivity/ (the H80 grid) can never be resumed into, overwritten, or confused with this one. Fixed factorial design, not a search: eta0 in {5e-4, 1.5e-3, 3e-3}, clip in {0.5, 1.0}, beta2 in {0.95, 0.999}, all 12 combinations run once at 60 epochs on the 150-basin subset. One cell (3e-3, 0.5, 0.95) is the submitted recipe, so the grid contains its own baseline. Mamba-3 only: the sawtooth the reviewers point at is the Mamba training curve, and LSTM is covered by the matched grid. 12 cells replaces the earlier 16-run booking; the 4 surplus runs are not spent (decision 2026-10-28). No test metric may appear in this file.",
+  "architectures": {
+    "mamba3": {
+      "tier": 1,
+      "depth": 3,
+      "epochs": 60,
+      "baseline": {
+        "mamba_lr": 0.003,
+        "mamba_min_lr": 0.0003,
+        "mamba_weight_decay": 0.001,
+        "mamba_grad_clip": 0.5,
+        "mamba_beta2": 0.95,
+        "mamba_dropout": 0.11
+      },
+      "trials": [
+        {
+          "id": "lr0p0005_clip0p5_b20p95",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.0005,
+            "mamba_min_lr": 5e-05,
+            "mamba_grad_clip": 0.5,
+            "mamba_beta2": 0.95,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "lr0p0005_clip0p5_b20p999",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.0005,
+            "mamba_min_lr": 5e-05,
+            "mamba_grad_clip": 0.5,
+            "mamba_beta2": 0.999,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "lr0p0005_clip1_b20p95",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.0005,
+            "mamba_min_lr": 5e-05,
+            "mamba_grad_clip": 1.0,
+            "mamba_beta2": 0.95,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "lr0p0005_clip1_b20p999",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.0005,
+            "mamba_min_lr": 5e-05,
+            "mamba_grad_clip": 1.0,
+            "mamba_beta2": 0.999,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "lr0p0015_clip0p5_b20p95",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.0015,
+            "mamba_min_lr": 0.00015000000000000001,
+            "mamba_grad_clip": 0.5,
+            "mamba_beta2": 0.95,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "lr0p0015_clip0p5_b20p999",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.0015,
+            "mamba_min_lr": 0.00015000000000000001,
+            "mamba_grad_clip": 0.5,
+            "mamba_beta2": 0.999,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "lr0p0015_clip1_b20p95",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.0015,
+            "mamba_min_lr": 0.00015000000000000001,
+            "mamba_grad_clip": 1.0,
+            "mamba_beta2": 0.95,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "lr0p0015_clip1_b20p999",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.0015,
+            "mamba_min_lr": 0.00015000000000000001,
+            "mamba_grad_clip": 1.0,
+            "mamba_beta2": 0.999,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "lr0p003_clip0p5_b20p95",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.003,
+            "mamba_min_lr": 0.0003,
+            "mamba_grad_clip": 0.5,
+            "mamba_beta2": 0.95,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "lr0p003_clip0p5_b20p999",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.003,
+            "mamba_min_lr": 0.0003,
+            "mamba_grad_clip": 0.5,
+            "mamba_beta2": 0.999,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "lr0p003_clip1_b20p95",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.003,
+            "mamba_min_lr": 0.0003,
+            "mamba_grad_clip": 1.0,
+            "mamba_beta2": 0.95,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        },
+        {
+          "id": "lr0p003_clip1_b20p999",
+          "origin": "3x2x2 factorial cell",
+          "params": {
+            "mamba_lr": 0.003,
+            "mamba_min_lr": 0.0003,
+            "mamba_grad_clip": 1.0,
+            "mamba_beta2": 0.999,
+            "mamba_weight_decay": 0.001,
+            "mamba_dropout": 0.11
+          }
+        }
+      ]
+    }
+  }
+}

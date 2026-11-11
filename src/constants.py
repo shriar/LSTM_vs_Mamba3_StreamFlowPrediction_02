@@ -1,0 +1,31 @@
+"""Channel definitions shared by the data pipeline and the model code.
+
+Deliberately free of torch: ``data_utils.py --build`` must run in a bare
+numpy/pandas environment, while ``config.py`` re-exports these names for the
+training path.  One definition, two consumers.
+"""
+
+# 35 CAMELS v2.0 static attributes, in the model's input column order.
+ATTR_LST = [
+    "p_mean", "pet_mean", "p_seasonality", "frac_snow", "aridity",
+    "high_prec_freq", "high_prec_dur", "low_prec_freq", "low_prec_dur",
+    "elev_mean", "slope_mean", "area_gages2", "frac_forest", "lai_max",
+    "lai_diff", "gvf_max", "gvf_diff", "dom_land_cover_frac",
+    "dom_land_cover", "root_depth_50", "soil_depth_pelletier",
+    "soil_depth_statsgo", "soil_porosity", "soil_conductivity",
+    "max_water_content", "sand_frac", "silt_frac", "clay_frac",
+    "geol_1st_class", "glim_1st_class_frac", "geol_2nd_class",
+    "glim_2nd_class_frac", "carbonate_rocks_frac", "geol_porosity",
+    "geol_permeability",
+]
+
+# Five dynamic forcing channels, in the model's input column order.
+DAYMET_VARIABLES = ["dayl", "prcp", "srad", "tmean", "vp"]
+NLDAS_VARIABLES = ["dayl", "prcp", "srad", "tmax", "vp"]
+
+
+def forcing_variables(for_type: str = "daymet"):
+    """Return the forcing variable list for a given forcing dataset."""
+    if for_type == "daymet":
+        return list(DAYMET_VARIABLES)
+    return list(NLDAS_VARIABLES)

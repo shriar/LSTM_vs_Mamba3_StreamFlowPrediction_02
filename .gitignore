@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+
+# Large data. Download CAMELS v1.2 separately (see README).
+data/raw/*
+!data/raw/layout.json
+data/preprocessed/*
+!data/preprocessed/attrs_order.json
+data/pickles/
+data/legacy/
+data/camels_attributes_v2.0/
+*.zip
+*.part
+
+# Run outputs and derived results
+output/
+output*/
+archive/
+logs/
+results/
+figures/
+.figure_staging/
+.matplotlib/
+
+# Checkpoints and arrays
+*.pt
+*.p
+*.npy
+*.npz
+*.pkl
+*.h5
+*.hdf5
+*.nc
+*.tif
+*.tiff
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.obsidian/
+.vscode/
+.idea/
+
+# LaTeX and local build files
+*.aux
+*.log
+*.out
+*.synctex.gz

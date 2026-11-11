@@ -1,0 +1,19 @@
+# Exact environment used for the reported runs (November 2026).
+# Python 3.13.18, CUDA 13.0, one NVIDIA RTX 4060 Laptop GPU (8 GB).
+
+--extra-index-url https://download.pytorch.org/whl/cu130
+torch==2.13.0+cu130
+numpy==2.5.4
+pandas==3.1.0
+scipy
+matplotlib
+geopandas
+shapely
+pyproj
+tqdm
+pypdf
+mamba-ssm==2.3.2.post1
+causal-conv1d==1.7.0
+
+# HydroDL is not on PyPI. Install the MHPI repository:
+#   pip install git+https://github.com/mhpi/hydroDL.git

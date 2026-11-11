@@ -1,0 +1,426 @@
+{
+  "schema": "eval_manifest/v1",
+  "created_utc": "2026-10-28T00:00:00Z",
+  "updated_utc": "2026-11-04T00:00:00Z",
+  "split_sha256": "9efbe60e790965f203b037d7e630828f7fe36285d4c86ee5c3ddbd93ec13cc58",
+  "policy": "Only cells listed here may ever open the test slice. G2 added the locked headline cells; nothing may be added after a test number is known for that comparison.",
+  "g2_note": "Cells were enumerated at G2 from the frozen seed ladder (5 seeds at the headline depth, 2 at the other depths, 3 for C1d/C6) before any test run of these recipes existed. C1d lists only the published-recipe Mamba arm; its HPO arm is C1a mamba3 T1 L3 seeds 1-3. C4 cells are added when B3 (the static-at-t=0 switch) exists, because until then their run folders would collide with C1a's; C4 has no test number, so adding them later violates nothing. C4 will use recipes/lstm.json with the B3 switch, recorded in the run's master.json. LADDER 2026-11-04: the Mamba widths were re-derived for the mandatory `standard` wiring (T1 176/112/96, T2 272/192/160, T3 384/272/224); every Mamba run_dir below was re-pointed before any cell trained at the old width, except the archived H80 Tier-1 3L seed-1 run. Cells keys (recipe, tier, depth, seed) are unchanged.",
+  "cells": [
+    {
+      "id": "G1",
+      "recipe": "recipes/g1.json",
+      "tier": 1,
+      "depth": 1,
+      "seed": 1,
+      "run_dir": "output/LSTM_1L/Tier1_200K_Ep30_Bs128_Rho365_H162_L1_Seed1/All"
+    },
+    {
+      "id": "C1a-lstm-T1-L1-S1",
+      "recipe": "recipes/lstm.json",
+      "tier": 1,
+      "depth": 1,
+      "seed": 1,
+      "run_dir": "output/LSTM_1L/Tier1_200K_Ep60_Bs128_Rho365_H162_L1_Seed1/All"
+    },
+    {
+      "id": "C1a-lstm-T1-L1-S2",
+      "recipe": "recipes/lstm.json",
+      "tier": 1,
+      "depth": 1,
+      "seed": 2,
+      "run_dir": "output/LSTM_1L/Tier1_200K_Ep60_Bs128_Rho365_H162_L1_Seed2/All"
+    },
+    {
+      "id": "C1a-lstm-T1-L1-S3",
+      "recipe": "recipes/lstm.json",
+      "tier": 1,
+      "depth": 1,
+      "seed": 3,
+      "run_dir": "output/LSTM_1L/Tier1_200K_Ep60_Bs128_Rho365_H162_L1_Seed3/All"
+    },
+    {
+      "id": "C1a-lstm-T1-L1-S4",
+      "recipe": "recipes/lstm.json",
+      "tier": 1,
+      "depth": 1,
+      "seed": 4,
+      "run_dir": "output/LSTM_1L/Tier1_200K_Ep60_Bs128_Rho365_H162_L1_Seed4/All"
+    },
+    {
+      "id": "C1a-lstm-T1-L1-S5",
+      "recipe": "recipes/lstm.json",
+      "tier": 1,
+      "depth": 1,
+      "seed": 5,
+      "run_dir": "output/LSTM_1L/Tier1_200K_Ep60_Bs128_Rho365_H162_L1_Seed5/All"
+    },
+    {
+      "id": "C1a-lstm-T1-L2-S1",
+      "recipe": "recipes/lstm.json",
+      "tier": 1,
+      "depth": 2,
+      "seed": 1,
+      "run_dir": "output/LSTM_2L/Tier1_200K_Ep60_Bs128_Rho365_H106_L2_Seed1/All"
+    },
+    {
+      "id": "C1a-lstm-T1-L2-S2",
+      "recipe": "recipes/lstm.json",
+      "tier": 1,
+      "depth": 2,
+      "seed": 2,
+      "run_dir": "output/LSTM_2L/Tier1_200K_Ep60_Bs128_Rho365_H106_L2_Seed2/All"
+    },
+    {
+      "id": "C1a-lstm-T1-L3-S1",
+      "recipe": "recipes/lstm.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 1,
+      "run_dir": "output/LSTM_3L/Tier1_200K_Ep60_Bs128_Rho365_H92_L3_Seed1/All"
+    },
+    {
+      "id": "C1a-lstm-T1-L3-S2",
+      "recipe": "recipes/lstm.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 2,
+      "run_dir": "output/LSTM_3L/Tier1_200K_Ep60_Bs128_Rho365_H92_L3_Seed2/All"
+    },
+    {
+      "id": "C1a-mamba3-T1-L1-S1",
+      "recipe": "recipes/mamba3.json",
+      "tier": 1,
+      "depth": 1,
+      "seed": 1,
+      "run_dir": "output/Mamba3_1L/Tier1_Ep60_Variant-standard_V3_head32_H176_L1_dConv4_Seed1/All"
+    },
+    {
+      "id": "C1a-mamba3-T1-L1-S2",
+      "recipe": "recipes/mamba3.json",
+      "tier": 1,
+      "depth": 1,
+      "seed": 2,
+      "run_dir": "output/Mamba3_1L/Tier1_Ep60_Variant-standard_V3_head32_H176_L1_dConv4_Seed2/All"
+    },
+    {
+      "id": "C1a-mamba3-T1-L2-S1",
+      "recipe": "recipes/mamba3.json",
+      "tier": 1,
+      "depth": 2,
+      "seed": 1,
+      "run_dir": "output/Mamba3_2L/Tier1_Ep60_Variant-standard_V3_head32_H112_L2_dConv4_Seed1/All"
+    },
+    {
+      "id": "C1a-mamba3-T1-L2-S2",
+      "recipe": "recipes/mamba3.json",
+      "tier": 1,
+      "depth": 2,
+      "seed": 2,
+      "run_dir": "output/Mamba3_2L/Tier1_Ep60_Variant-standard_V3_head32_H112_L2_dConv4_Seed2/All"
+    },
+    {
+      "id": "C1a-mamba3-T1-L3-S1",
+      "recipe": "recipes/mamba3.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 1,
+      "run_dir": "output/Mamba3_3L/Tier1_Ep60_Variant-standard_V3_head32_H96_L3_dConv4_Seed1/All"
+    },
+    {
+      "id": "C1a-mamba3-T1-L3-S2",
+      "recipe": "recipes/mamba3.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 2,
+      "run_dir": "output/Mamba3_3L/Tier1_Ep60_Variant-standard_V3_head32_H96_L3_dConv4_Seed2/All"
+    },
+    {
+      "id": "C1a-mamba3-T1-L3-S3",
+      "recipe": "recipes/mamba3.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 3,
+      "run_dir": "output/Mamba3_3L/Tier1_Ep60_Variant-standard_V3_head32_H96_L3_dConv4_Seed3/All"
+    },
+    {
+      "id": "C1a-mamba3-T1-L3-S4",
+      "recipe": "recipes/mamba3.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 4,
+      "run_dir": "output/Mamba3_3L/Tier1_Ep60_Variant-standard_V3_head32_H96_L3_dConv4_Seed4/All"
+    },
+    {
+      "id": "C1a-mamba3-T1-L3-S5",
+      "recipe": "recipes/mamba3.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 5,
+      "run_dir": "output/Mamba3_3L/Tier1_Ep60_Variant-standard_V3_head32_H96_L3_dConv4_Seed5/All"
+    },
+    {
+      "id": "C1b-lstm-T2-L1-S1",
+      "recipe": "recipes/lstm.json",
+      "tier": 2,
+      "depth": 1,
+      "seed": 1,
+      "run_dir": "output/LSTM_1L/Tier2_500K_Ep60_Bs128_Rho365_H247_L1_Seed1/All"
+    },
+    {
+      "id": "C1b-lstm-T2-L1-S2",
+      "recipe": "recipes/lstm.json",
+      "tier": 2,
+      "depth": 1,
+      "seed": 2,
+      "run_dir": "output/LSTM_1L/Tier2_500K_Ep60_Bs128_Rho365_H247_L1_Seed2/All"
+    },
+    {
+      "id": "C1b-lstm-T2-L2-S1",
+      "recipe": "recipes/lstm.json",
+      "tier": 2,
+      "depth": 2,
+      "seed": 1,
+      "run_dir": "output/LSTM_2L/Tier2_500K_Ep60_Bs128_Rho365_H177_L2_Seed1/All"
+    },
+    {
+      "id": "C1b-lstm-T2-L2-S2",
+      "recipe": "recipes/lstm.json",
+      "tier": 2,
+      "depth": 2,
+      "seed": 2,
+      "run_dir": "output/LSTM_2L/Tier2_500K_Ep60_Bs128_Rho365_H177_L2_Seed2/All"
+    },
+    {
+      "id": "C1b-lstm-T2-L3-S1",
+      "recipe": "recipes/lstm.json",
+      "tier": 2,
+      "depth": 3,
+      "seed": 1,
+      "run_dir": "output/LSTM_3L/Tier2_500K_Ep60_Bs128_Rho365_H149_L3_Seed1/All"
+    },
+    {
+      "id": "C1b-lstm-T2-L3-S2",
+      "recipe": "recipes/lstm.json",
+      "tier": 2,
+      "depth": 3,
+      "seed": 2,
+      "run_dir": "output/LSTM_3L/Tier2_500K_Ep60_Bs128_Rho365_H149_L3_Seed2/All"
+    },
+    {
+      "id": "C1b-mamba3-T2-L1-S1",
+      "recipe": "recipes/mamba3.json",
+      "tier": 2,
+      "depth": 1,
+      "seed": 1,
+      "run_dir": "output/Mamba3_1L/Tier2_Ep60_Variant-standard_V3_head32_H272_L1_dConv4_Seed1/All"
+    },
+    {
+      "id": "C1b-mamba3-T2-L1-S2",
+      "recipe": "recipes/mamba3.json",
+      "tier": 2,
+      "depth": 1,
+      "seed": 2,
+      "run_dir": "output/Mamba3_1L/Tier2_Ep60_Variant-standard_V3_head32_H272_L1_dConv4_Seed2/All"
+    },
+    {
+      "id": "C1b-mamba3-T2-L2-S1",
+      "recipe": "recipes/mamba3.json",
+      "tier": 2,
+      "depth": 2,
+      "seed": 1,
+      "run_dir": "output/Mamba3_2L/Tier2_Ep60_Variant-standard_V3_head32_H192_L2_dConv4_Seed1/All"
+    },
+    {
+      "id": "C1b-mamba3-T2-L2-S2",
+      "recipe": "recipes/mamba3.json",
+      "tier": 2,
+      "depth": 2,
+      "seed": 2,
+      "run_dir": "output/Mamba3_2L/Tier2_Ep60_Variant-standard_V3_head32_H192_L2_dConv4_Seed2/All"
+    },
+    {
+      "id": "C1b-mamba3-T2-L3-S1",
+      "recipe": "recipes/mamba3.json",
+      "tier": 2,
+      "depth": 3,
+      "seed": 1,
+      "run_dir": "output/Mamba3_3L/Tier2_Ep60_Variant-standard_V3_head32_H160_L3_dConv4_Seed1/All"
+    },
+    {
+      "id": "C1b-mamba3-T2-L3-S2",
+      "recipe": "recipes/mamba3.json",
+      "tier": 2,
+      "depth": 3,
+      "seed": 2,
+      "run_dir": "output/Mamba3_3L/Tier2_Ep60_Variant-standard_V3_head32_H160_L3_dConv4_Seed2/All"
+    },
+    {
+      "id": "C1c-lstm-T3-L1-S1",
+      "recipe": "recipes/lstm.json",
+      "tier": 3,
+      "depth": 1,
+      "seed": 1,
+      "run_dir": "output/LSTM_1L/Tier3_1M_Ep60_Bs128_Rho365_H345_L1_Seed1/All"
+    },
+    {
+      "id": "C1c-lstm-T3-L1-S2",
+      "recipe": "recipes/lstm.json",
+      "tier": 3,
+      "depth": 1,
+      "seed": 2,
+      "run_dir": "output/LSTM_1L/Tier3_1M_Ep60_Bs128_Rho365_H345_L1_Seed2/All"
+    },
+    {
+      "id": "C1c-lstm-T3-L2-S1",
+      "recipe": "recipes/lstm.json",
+      "tier": 3,
+      "depth": 2,
+      "seed": 1,
+      "run_dir": "output/LSTM_2L/Tier3_1M_Ep60_Bs128_Rho365_H248_L2_Seed1/All"
+    },
+    {
+      "id": "C1c-lstm-T3-L2-S2",
+      "recipe": "recipes/lstm.json",
+      "tier": 3,
+      "depth": 2,
+      "seed": 2,
+      "run_dir": "output/LSTM_2L/Tier3_1M_Ep60_Bs128_Rho365_H248_L2_Seed2/All"
+    },
+    {
+      "id": "C1c-lstm-T3-L3-S1",
+      "recipe": "recipes/lstm.json",
+      "tier": 3,
+      "depth": 3,
+      "seed": 1,
+      "run_dir": "output/LSTM_3L/Tier3_1M_Ep60_Bs128_Rho365_H206_L3_Seed1/All"
+    },
+    {
+      "id": "C1c-lstm-T3-L3-S2",
+      "recipe": "recipes/lstm.json",
+      "tier": 3,
+      "depth": 3,
+      "seed": 2,
+      "run_dir": "output/LSTM_3L/Tier3_1M_Ep60_Bs128_Rho365_H206_L3_Seed2/All"
+    },
+    {
+      "id": "C1c-mamba3-T3-L1-S1",
+      "recipe": "recipes/mamba3.json",
+      "tier": 3,
+      "depth": 1,
+      "seed": 1,
+      "run_dir": "output/Mamba3_1L/Tier3_Ep60_Variant-standard_V3_head32_H384_L1_dConv4_Seed1/All"
+    },
+    {
+      "id": "C1c-mamba3-T3-L1-S2",
+      "recipe": "recipes/mamba3.json",
+      "tier": 3,
+      "depth": 1,
+      "seed": 2,
+      "run_dir": "output/Mamba3_1L/Tier3_Ep60_Variant-standard_V3_head32_H384_L1_dConv4_Seed2/All"
+    },
+    {
+      "id": "C1c-mamba3-T3-L2-S1",
+      "recipe": "recipes/mamba3.json",
+      "tier": 3,
+      "depth": 2,
+      "seed": 1,
+      "run_dir": "output/Mamba3_2L/Tier3_Ep60_Variant-standard_V3_head32_H272_L2_dConv4_Seed1/All"
+    },
+    {
+      "id": "C1c-mamba3-T3-L2-S2",
+      "recipe": "recipes/mamba3.json",
+      "tier": 3,
+      "depth": 2,
+      "seed": 2,
+      "run_dir": "output/Mamba3_2L/Tier3_Ep60_Variant-standard_V3_head32_H272_L2_dConv4_Seed2/All"
+    },
+    {
+      "id": "C1c-mamba3-T3-L3-S1",
+      "recipe": "recipes/mamba3.json",
+      "tier": 3,
+      "depth": 3,
+      "seed": 1,
+      "run_dir": "output/Mamba3_3L/Tier3_Ep60_Variant-standard_V3_head32_H224_L3_dConv4_Seed1/All"
+    },
+    {
+      "id": "C1c-mamba3-T3-L3-S2",
+      "recipe": "recipes/mamba3.json",
+      "tier": 3,
+      "depth": 3,
+      "seed": 2,
+      "run_dir": "output/Mamba3_3L/Tier3_Ep60_Variant-standard_V3_head32_H224_L3_dConv4_Seed2/All"
+    },
+    {
+      "id": "C1d-mamba3-native-T1-L3-S1",
+      "recipe": "recipes/mamba3_native.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 1,
+      "run_dir": "output/native/Mamba3_3L/Tier1_Ep60_Variant-standard_V3_head32_H96_L3_dConv4_Seed1/All"
+    },
+    {
+      "id": "C1d-mamba3-native-T1-L3-S2",
+      "recipe": "recipes/mamba3_native.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 2,
+      "run_dir": "output/native/Mamba3_3L/Tier1_Ep60_Variant-standard_V3_head32_H96_L3_dConv4_Seed2/All"
+    },
+    {
+      "id": "C1d-mamba3-native-T1-L3-S3",
+      "recipe": "recipes/mamba3_native.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 3,
+      "run_dir": "output/native/Mamba3_3L/Tier1_Ep60_Variant-standard_V3_head32_H96_L3_dConv4_Seed3/All"
+    },
+    {
+      "id": "C6-lstm-T1-L1-S1",
+      "recipe": "recipes/lstm_c6.json",
+      "tier": 1,
+      "depth": 1,
+      "seed": 1,
+      "run_dir": "output/LSTM_1L/Tier1_200K_Ep90_Bs128_Rho1095_H162_L1_Seed1/All"
+    },
+    {
+      "id": "C6-lstm-T1-L1-S2",
+      "recipe": "recipes/lstm_c6.json",
+      "tier": 1,
+      "depth": 1,
+      "seed": 2,
+      "run_dir": "output/LSTM_1L/Tier1_200K_Ep90_Bs128_Rho1095_H162_L1_Seed2/All"
+    },
+    {
+      "id": "C6-lstm-T1-L1-S3",
+      "recipe": "recipes/lstm_c6.json",
+      "tier": 1,
+      "depth": 1,
+      "seed": 3,
+      "run_dir": "output/LSTM_1L/Tier1_200K_Ep90_Bs128_Rho1095_H162_L1_Seed3/All"
+    },
+    {
+      "id": "C6-mamba3-T1-L3-S1",
+      "recipe": "recipes/mamba3_c6.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 1,
+      "run_dir": "output/Mamba3_3L/Tier1_Ep90_Variant-standard_V3_head32_H96_L3_dConv4_Rho1095_Seed1/All"
+    },
+    {
+      "id": "C6-mamba3-T1-L3-S2",
+      "recipe": "recipes/mamba3_c6.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 2,
+      "run_dir": "output/Mamba3_3L/Tier1_Ep90_Variant-standard_V3_head32_H96_L3_dConv4_Rho1095_Seed2/All"
+    },
+    {
+      "id": "C6-mamba3-T1-L3-S3",
+      "recipe": "recipes/mamba3_c6.json",
+      "tier": 1,
+      "depth": 3,
+      "seed": 3,
+      "run_dir": "output/Mamba3_3L/Tier1_Ep90_Variant-standard_V3_head32_H96_L3_dConv4_Rho1095_Seed3/All"
+    }
+  ]
+}
